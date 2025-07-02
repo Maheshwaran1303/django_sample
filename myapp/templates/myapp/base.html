@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+    <title>
+        {% block title %}
+            My App
+        {% endblock %}
+    </title> 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head> 
+
+<body> 
+    <header> 
+        <h1>My Site Header</h1> 
+        <ul> 
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </header> 
+ 
+    <main> 
+        {% block content %} 
+        <!-- Content goes here --> 
+        {% endblock %} 
+    </main> 
+ 
+    <footer> 
+        <p>© 2025 My Site</p> 
+    </footer> 
+</body> 
+</html>
