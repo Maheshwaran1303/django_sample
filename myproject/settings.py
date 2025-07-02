@@ -72,6 +72,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+DATABASE_URL = postgresql://mahesh:JWA3r4PuZKN6GsEPcaPqoz3vKq3iisjk@dpg-d1i9sq3e5dus739g8pgg-a/mydb_x4yp
 
 import os
 if 'DATABASE_URL' in os.environ:
@@ -132,6 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import dj_database_url
 import os
 
+dj_database_url = postgresql://mahesh:JWA3r4PuZKN6GsEPcaPqoz3vKq3iisjk@dpg-d1i9sq3e5dus739g8pgg-a/mydb_x4yp
 if 'RENDER' in os.environ:
     DEBUG = False
     ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
