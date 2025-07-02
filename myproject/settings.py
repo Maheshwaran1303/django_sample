@@ -133,7 +133,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import dj_database_url
 import os
 
-dj_database_url = postgresql://mahesh:JWA3r4PuZKN6GsEPcaPqoz3vKq3iisjk@dpg-d1i9sq3e5dus739g8pgg-a/mydb_x4yp
 if 'RENDER' in os.environ:
     DEBUG = False
     ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
@@ -146,4 +145,10 @@ if 'RENDER' in os.environ:
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
